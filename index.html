@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ações de Disparo — Maio/26 | Perfuma & Decora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6f0;
+    --warm-white: #fff9f4;
+    --gold: #b8924a;
+    --gold-light: #d4a96a;
+    --gold-pale: #f0e4cc;
+    --dark: #2a2118;
+    --mid: #6b5a47;
+    --soft: #a09080;
+    --border: #e8ddd0;
+    --wa-green: #25D366;
+    --email-blue: #5b8db8;
+    --tag-bg: #f5ede0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dark);
+    padding: 48px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 120%, rgba(184,146,74,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0.85;
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(26px, 4vw, 42px);
+    color: var(--warm-white);
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .header-sub {
+    margin-top: 14px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--soft);
+    text-transform: uppercase;
+  }
+  .header-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px auto 0;
+    opacity: 0.6;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-header {
+    padding: 60px 0 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    color: var(--dark);
+  }
+
+  /* ── CALENDAR TABLE ── */
+  .calendar-wrap {
+    overflow-x: auto;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 680px;
+    background: var(--warm-white);
+  }
+  thead tr {
+    background: var(--dark);
+  }
+  thead th {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    padding: 16px 18px;
+    text-align: left;
+    font-weight: 400;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  tbody tr:hover { background: var(--gold-pale); }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 16px 18px;
+    font-size: 13.5px;
+    vertical-align: top;
+  }
+  .td-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    white-space: nowrap;
+  }
+  .td-day {
+    font-size: 10px;
+    color: var(--soft);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .td-time {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .td-tema strong {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+  .td-tema span {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  .canal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .canal-email {
+    background: #e8f0f8;
+    color: #3a6a9a;
+  }
+  .canal-wa {
+    background: #e3f8ec;
+    color: #1a8a45;
+  }
+  .canal-both {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .copy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-pale);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+    font-weight: 500;
+  }
+  .copy-link:hover { color: var(--dark); border-color: var(--dark); }
+
+  .audience-text {
+    font-size: 12.5px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* highlight row */
+  tr.highlight-maes td { background: #fef8ec; }
+
+  /* ── CARDS SECTION ── */
+  .cards-grid {
+    display: grid;
+    gap: 28px;
+  }
+
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 20px 28px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .card-header-left h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .card-meta {
+    font-size: 12px;
+    color: var(--soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .card-meta span { display: flex; align-items: center; gap: 4px; }
+  .card-meta .dot { width: 3px; height: 3px; background: var(--border); border-radius: 50%; }
+
+  .card-body {
+    padding: 24px 28px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .field-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 7px;
+    font-weight: 600;
+  }
+  .field-value {
+    font-size: 13.5px;
+    color: var(--dark);
+  }
+
+  .subject-box {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    border-radius: 2px;
+  }
+  .subject-box .label-sm {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-bottom: 5px;
+  }
+  .subject-box .assunto {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .subject-box .preheader {
+    font-size: 12.5px;
+    color: var(--mid);
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  .copy-body {
+    background: #fdfaf6;
+    border-left: 3px solid var(--gold-pale);
+    padding: 20px 22px;
+    border-radius: 0 2px 2px 0;
+    font-size: 13.5px;
+    color: var(--dark);
+    white-space: pre-wrap;
+    line-height: 1.75;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--dark);
+    color: var(--gold-light);
+    text-decoration: none;
+    padding: 11px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 1px;
+    transition: background 0.2s;
+  }
+  .cta-btn:hover { background: var(--gold); color: var(--dark); }
+  .cta-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--mid);
+  }
+  .cta-btn.secondary:hover { background: var(--gold-pale); color: var(--dark); }
+
+  .banner-box {
+    background: linear-gradient(135deg, #fdf5e8 0%, #f5ede0 100%);
+    border: 1px dashed var(--gold);
+    border-radius: 2px;
+    padding: 18px 22px;
+  }
+  .banner-box .banner-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .banner-suggestion {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+  .banner-suggestion strong { color: var(--dark); font-weight: 500; }
+
+  /* ── WA CARD ── */
+  .wa-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .wa-card-header {
+    background: linear-gradient(90deg, #1a8a45 0%, #22a854 100%);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .wa-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .wa-card-header h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+  }
+  .wa-card-header .wa-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 1px;
+  }
+  .wa-card-body {
+    padding: 22px 24px;
+    display: grid;
+    gap: 18px;
+  }
+  .wa-bubble {
+    background: #e9ffd4;
+    border-radius: 12px 12px 12px 2px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    color: var(--dark);
+    white-space: pre-wrap;
+    line-height: 1.7;
+    border: 1px solid #d4f5b4;
+    max-width: 520px;
+  }
+
+  .adicional-badge {
+    display: inline-block;
+    background: #fff3e0;
+    color: #c17a00;
+    border: 1px solid #f0c060;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .divider-ornament {
+    text-align: center;
+    padding: 40px 0 10px;
+    color: var(--gold-pale);
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .card-body { padding: 18px; }
+    .card-header { padding: 16px 18px; }
+    .wa-card-body { padding: 16px; }
+  }
+
+  .footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 32px 24px;
+    margin-top: 60px;
+  }
+  .footer p {
+    font-size: 12px;
+    color: var(--soft);
+    letter-spacing: 1px;
+  }
+  .footer strong {
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  /* Anchor nav smooth */
+  html { scroll-behavior: smooth; }
+
+  /* ── NAV ── */
+  .sticky-nav {
+    background: rgba(42,33,24,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(184,146,74,0.2);
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    color: var(--soft);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    font-weight: 500;
+  }
+  .nav-btn:hover { color: var(--gold-light); border-color: var(--gold); }
+
+  .camp-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .c1 { background: #f0e8d8; color: #8a5a20; }
+  .c2 { background: #e8f0e8; color: #2a6a2a; }
+  .c3 { background: #e8e0f0; color: #5a2a8a; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-ornament">Perfuma & Decora · Marketing Olfativo Premium</div>
+  <h1>Ações de Disparo de<br><em>WhatsApp e E-mail Marketing</em></h1>
+  <div class="header-sub">Maio · 2025</div>
+  <div class="header-divider"></div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#calendario" class="nav-btn">Calendário</a>
+    <a href="#emails" class="nav-btn">Copys de E-mail</a>
+    <a href="#whatsapp" class="nav-btn">Copys de WhatsApp</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════ CALENDÁRIO ══════════════════════════════════════ -->
+  <section id="calendario">
+    <div class="section-header">
+      <div class="section-tag">01 — Visão Geral</div>
+      <h2>Calendário de Ações — Maio 2025</h2>
+    </div>
+
+    <div class="calendar-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data · Horário</th>
+            <th>Tema / Objetivo</th>
+            <th>Canal</th>
+            <th>Público-Alvo</th>
+            <th>Ver Conteúdo</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+              <span class="td-date">01/05 <span class="td-day">Quarta</span></span>
+              <div class="td-time">9h30</div>
+            </td>
+            <td class="td-tema">
+              <strong>Abertura das 3 Campanhas de Maio</strong>
+              <span>Lançamento: aromatizador + máquina + Elegance/Aromaterapia</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-email">✉ E-mail</span>
+            </td>
+            <td class="audience-text">Clientes ativos (últimos 90 dias), inativos qualificados, perfil comercial e amantes de bem-estar</td>
+            <td><a href="#email-01" class="copy-link">↓ Ver copy</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">03/05 <span class="td-day">Sábado</span></span>
+              <div class="td-time">10h</div>
+            </td>
+            <td class="td-tema">
+              <strong>A Dupla Perfeita + Elegance com 25% OFF</strong>
+              <span>Educativo: como usar aromatizador + água de passar</span>
+            </td>
+            <td>
+              <div class="canal-both">
+                <span class="canal-badge canal-email">✉ E-mail (02)</span>
+                <span class="canal-badge canal-email">✉ E-mail (08)</span>
+              </div>
+            </td>
+            <td class="audience-text">Pessoas que nunca compraram + compradores de aromatizador que ainda não têm água de passar + amantes de bem-estar</td>
+            <td>
+              <a href="#email-02" class="copy-link">↓ Copy 02</a><br>
+              <a href="#email-08" class="copy-link">↓ Copy 08</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">05/05 <span class="td-day">Segunda</span></span>
+              <div class="td-time">9h</div>
+            </td>
+            <td class="td-tema">
+              <strong>VIPs: acesso exclusivo às ofertas</strong>
+              <span>Aromatizador + Elegance/Aromaterapia 25% OFF</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-wa">💬 WhatsApp</span>
+            </td>
+            <td class="audience-text">Clientes especiais — compradores ativos dos últimos 90 dias</td>
+            <td><a href="#wa-01" class="copy-link">↓ Ver copy</a></td>
+          </tr>
+
+          <tr class="highlight-maes">
+            <td>
+              <span class="td-date">08/05 <span class="td-day">Quinta</span></span>
+              <div class="td-time">9h30</div>
+            </td>
+            <td class="td-tema">
+              <strong>🌸 Dia das Mães: o presente perfeito</strong>
+              <span>Foco em aromatizador como presente + máquina para espaços profissionais</span>
+            </td>
+            <td>
+              <div class="canal-both">
+                <span class="canal-badge canal-email">✉ E-mail (03) — todos</span>
+                <span class="canal-badge canal-email">✉ E-mail (04) — comercial</span>
+                <span class="canal-badge canal-wa">💬 WhatsApp (WA02)</span>
+              </div>
+            </td>
+            <td class="audience-text">Toda a base (e-mail) + perfil comercial separado (WA: clientes com perfil de negócio)</td>
+            <td>
+              <a href="#email-03" class="copy-link">↓ Copy 03</a><br>
+              <a href="#email-04" class="copy-link">↓ Copy 04</a><br>
+              <a href="#wa-02" class="copy-link">↓ WA 02</a>
+            </td>
+          </tr>
+
+          <tr class="highlight-maes">
+            <td>
+              <span class="td-date">09/05 <span class="td-day">Sexta</span></span>
+              <div class="td-time">9h</div>
+            </td>
+            <td class="td-tema">
+              <strong>🌸 Urgência Dia das Mães — último dia de entrega</strong>
+              <span>Pedidos até hoje chegam a tempo</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-wa">💬 WhatsApp</span>
+            </td>
+            <td class="audience-text">Inativos que compraram antes (entre 3 e 12 meses) + compradores de aromatizador sem água de passar</td>
+            <td><a href="#wa-03" class="copy-link">↓ Ver copy</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">13/05 <span class="td-day">Terça</span></span>
+              <div class="td-time">10h</div>
+            </td>
+            <td class="td-tema">
+              <strong>Pós-Dia das Mães + Bem-estar continua</strong>
+              <span>Reativação + Elegance e Aromaterapia seguem com desconto</span>
+            </td>
+            <td>
+              <div class="canal-both">
+                <span class="canal-badge canal-email">✉ E-mail (05)</span>
+                <span class="canal-badge canal-email">✉ E-mail (09)</span>
+              </div>
+            </td>
+            <td class="audience-text">Inativos + leads que nunca compraram + amantes de bem-estar</td>
+            <td>
+              <a href="#email-05" class="copy-link">↓ Copy 05</a><br>
+              <a href="#email-09" class="copy-link">↓ Copy 09</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">16/05 <span class="td-day">Sexta</span></span>
+              <div class="td-time">10h</div>
+            </td>
+            <td class="td-tema">
+              <strong>Prova Social: depoimentos reais</strong>
+              <span>Construção de confiança com avaliações de clientes</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-email">✉ E-mail</span>
+            </td>
+            <td class="audience-text">Pessoas que nunca compraram + compradores de aromatizador sem água de passar</td>
+            <td><a href="#email-06" class="copy-link">↓ Ver copy</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">21/05 <span class="td-day">Quarta</span></span>
+              <div class="td-time">10h</div>
+            </td>
+            <td class="td-tema">
+              <strong>Urgência + Bem-estar e Aromaterapia</strong>
+              <span>Reforço das campanhas máquina + linhas com desconto</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-email">✉ E-mail</span>
+            </td>
+            <td class="audience-text">Inativos + perfil comercial + amantes de bem-estar</td>
+            <td>—</td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">28/05 <span class="td-day">Quarta</span></span>
+              <div class="td-time">9h30</div>
+            </td>
+            <td class="td-tema">
+              <strong>⏳ Faltam 3 dias — Último aviso</strong>
+              <span>Urgência máxima: todas as campanhas encerram em 31/05</span>
+            </td>
+            <td>
+              <span class="canal-badge canal-email">✉ E-mail</span>
+            </td>
+            <td class="audience-text">Clientes VIPs + inativos + leads + amantes de bem-estar (toda a base)</td>
+            <td><a href="#email-07" class="copy-link">↓ Ver copy</a></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="td-date">30/05 <span class="td-day">Sexta</span></span>
+              <div class="td-time">9h</div>
+            </td>
+            <td class="td-tema">
+              <strong>🔚 ÚLTIMO DIA — Encerramento de todas as campanhas</strong>
+              <span>E-mail para toda a base + WhatsApp para os que não compraram em maio</span>
+            </td>
+            <td>
+              <div class="canal-both">
+                <span class="canal-badge canal-email">✉ E-mail — todos</span>
+                <span class="canal-badge canal-wa">💬 WhatsApp</span>
+              </div>
+            </td>
+            <td class="audience-text">Toda a base por e-mail · WhatsApp apenas para VIPs e inativos que não compraram em maio</td>
+            <td><a href="#wa-09" class="copy-link">↓ WA 09</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ EMAILS ══════════════════════════════════════ -->
+  <section id="emails">
+    <div class="section-header">
+      <div class="section-tag">02 — E-mail Marketing</div>
+      <h2>Copys dos E-mails</h2>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- EMAIL 01 -->
+      <div class="card" id="email-01">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 01 — Abertura das Campanhas</h3>
+            <div class="card-meta">
+              <span>📅 01/05 (Quarta) · 9h30</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+              <span class="camp-tag c2">Campanha 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Clientes ativos dos últimos 90 dias (VIPs), clientes que compraram há mais de 3 meses (inativos qualificados) e perfil comercial (lojas, clínicas, salões).</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">Novidade exclusiva de maio pra você 🌸 | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Duas promoções especiais que você não pode perder — só este mês!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Olá, {Nome}! 🌸
+
+Maio chegou com duas novidades especiais da Perfuma & Decora — e você está entre os primeiros a saber!
+
+🌿 CAMPANHA 1 — COMPRE 1, GANHE OUTRO
+Na compra do Aromatizador de Ambientes 500ml, você ganha de brinde uma Água de Passar Perfumada da sua escolha. Grátis. Só em maio!
+
+🏢 CAMPANHA 2 — MÁQUINA DE AROMA 150m² EM PROMOÇÃO
+A Máquina Profissional para até 150m² saiu de R$958,80 por R$899,00 + uma Fragrância 200ml GRÁTIS da sua escolha. Ideal para lojas, clínicas, salões e espaços profissionais.
+
+Ofertas válidas até 31/05. Não perca!
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Aromatizador 500ml</a>
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn secondary">Máquina 150m²</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Duas seções lado a lado — à esquerda o Aromatizador 500ml em fundo creme com texto "Compre 1, Ganhe 1"; à direita a Máquina em fundo escuro com "De R$958,80 por R$899,00 + Fragrância GRÁTIS".<br><br>
+              <strong>Paleta:</strong> Tons de bege, dourado e verde escuro. Fontes elegantes. <strong>Call-to-action:</strong> botão dourado com "Aproveitar agora".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 02 -->
+      <div class="card" id="email-02">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 02 — A Dupla Perfeita (Educativo)</h3>
+            <div class="card-meta">
+              <span>📅 03/05 (Sábado) · 10h</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Pessoas que nunca compraram (leads) e compradores de aromatizador que ainda não têm água de passar — foco em educação e cross-sell natural.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">O segredo do lar cheiroso o dia todo 🌿 | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Aromatizador + Água de Passar: a dupla que vai transformar sua rotina.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Sabia que existe uma dupla de produtos que mantém sua casa cheirosa do manhã à noite?
+
+Muitas pessoas já conhecem o nosso Aromatizador de Ambientes 500ml — alta fixação, fragrâncias exclusivas, resultado imediato. Mas poucas descobriram que a Água de Passar Perfumada completa essa experiência de forma surpreendente.
+
+🌸 Como usar a dupla no dia a dia:
+Manhã: Ao passar as roupas, aplique a Água de Passar Perfumada. Você sai de casa com um aroma suave e sofisticado que dura horas.
+Tarde/Noite: Borrife o Aromatizador nos sofás, cortinas e tapetes. Em minutos, a casa ganha aquele cheirinho inconfundível.
+
+E em maio, você pode ter os dois produtos pelo preço de um. 🎁
+
+Compre o Aromatizador 500ml e ganhe a Água de Passar Perfumada de brinde!
+
+Garanta o seu: perfumaedecora.com.br/aromatizador500ml
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Ver Aromatizador 500ml</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Flat lay com os dois produtos lado a lado em superfície de madeira clara. Textos sobrepostos: "Manhã: Água de Passar" / "Noite: Aromatizador". Tom aconchegante e doméstico.<br><br>
+              <strong>Destaque:</strong> Seta ou ícone conectando os dois produtos. Texto em destaque: "Pelo preço de 1".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 03 -->
+      <div class="card" id="email-03">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 03 — Dia das Mães 🌸</h3>
+            <div class="card-meta">
+              <span>📅 08/05 (Quinta) · 9h30</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Toda a base — clientes ativos, inativos, leads e compradores (envio amplo para maximizar alcance no Dia das Mães).</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">O presente mais cheiroso do Dia das Mães está aqui 🌸</div>
+            <div class="preheader">Pré-header: Presenteie com sofisticação — e ainda ganhe um brinde especial!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Domingo é Dia das Mães — e nós temos o presente perfeito. 💐
+
+Nada como presentear com algo que transforma o dia a dia em experiência. Um aroma que acolhe, relaxa e embeleza qualquer ambiente.
+
+🌿 Aromatizador de Ambientes 500ml + Água de Passar Perfumada de BRINDE.
+Dois produtos premium, pelo preço de um. O presente que qualquer mamãe vai amar!
+
+⏰ Pedidos feitos até sexta-feira (09/05) chegam a tempo para o domingo!
+
+✨ Fragrâncias exclusivas · Alta fixação · Entrega rápida
+
+Presentear agora: perfumaedecora.com.br/aromatizador500ml
+
+Com muito carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Comprar Agora — Dia das Mães</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Composição floral suave com o aromatizador embrulhado para presente. Paleta: tons de rosa antigo, creme e dourado. Fundo com pétalas sutis.<br><br>
+              <strong>Texto destaque:</strong> "O presente que ela vai adorar" · Urgência: "Peça até sexta e receba a tempo".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 04 -->
+      <div class="card" id="email-04">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 04 — Máquina para Espaços Profissionais</h3>
+            <div class="card-meta">
+              <span>📅 08/05 (Quinta) · 9h30</span>
+              <span class="dot"></span>
+              <span class="camp-tag c2">Campanha 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Clientes com perfil comercial: donos de lojas, clínicas, salões, escritórios e espaços que já compraram máquinas ou fragrâncias para marketing olfativo. Ticket médio alto.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">Sua loja ou espaço merece um aroma profissional 🏢 | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Máquina 150m² em promoção + Fragrância 200ml grátis. Só em maio!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">{Nome}, o aroma certo pode aumentar o tempo de permanência dos seus clientes e fortalecer a identidade do seu espaço.
+
+Por isso, em maio temos uma condição especial para você que já conhece o poder do marketing olfativo:
+
+🏢 MÁQUINA DE AROMA PROFISSIONAL PARA ATÉ 150m²
+✅ Controle digital de intensidade e horário
+✅ Cobertura de até 150 metros quadrados
+✅ Ideal para lojas, clínicas, salões, escritórios e espaços comerciais
+✅ De R$958,80 por apenas R$899,00
+✅ + Fragrância 200ml GRÁTIS da sua escolha
+
+Equipamento profissional, resultado imediato, investimento único.
+
+Ver a máquina completa: 1250764.commercesuite.com.br/maquinadearoma150metros
+Explorar fragrâncias: perfumaedecora.com.br/marketingolfativoo
+
+Promoção válida até 31/05 ou enquanto durar o estoque.
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn">Ver Máquina 150m²</a>
+              <a href="https://perfumaedecora.com.br/marketingolfativoo" target="_blank" class="cta-btn secondary">Ver Fragrâncias</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Máquina em ambiente profissional (loja elegante ou clínica). Fundo escuro, clima premium.<br><br>
+              <strong>Destaques:</strong> "De R$958,80 por R$899,00" com riscado no preço antigo · "+ Fragrância 200ml GRÁTIS" em destaque dourado.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 05 -->
+      <div class="card" id="email-05">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 05 — Pós-Dia das Mães: A promoção continua</h3>
+            <div class="card-meta">
+              <span>📅 13/05 (Terça) · 10h</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Clientes inativos (compraram há mais de 3 meses) e leads que nunca compraram — foco em reativação com a oferta ainda ativa.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">O Dia das Mães passou, mas a promoção continua 🌿</div>
+            <div class="preheader">Pré-header: Ainda dá tempo de aproveitar — a oferta segue até 31/05!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Olá, {Nome}!
+
+O Dia das Mães acabou, mas a nossa promoção de maio continua para você!
+
+🌿 COMPRE 1 Aromatizador 500ml → GANHE 1 Água de Passar Perfumada de brinde.
+
+Que tal aproveitar para presentear a si mesmo ou renovar o aroma da sua casa? Você merece!
+
+A oferta é válida até 31 de maio. Não precisa esperar outra data especial. 🎁
+
+Aproveitar agora: perfumaedecora.com.br/aromatizador500ml
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Garantir Minha Oferta</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Clima de autocuidado — aromatizador em ambiente relaxante (home office, quarto). Tom creme e verde.<br><br>
+              <strong>Texto:</strong> "Cuide também de você" · "Promoção válida até 31/05".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 06 -->
+      <div class="card" id="email-06">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 06 — Prova Social: Depoimentos Reais</h3>
+            <div class="card-meta">
+              <span>📅 16/05 (Sexta) · 10h</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+              <span class="camp-tag c2">Campanha 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Pessoas que nunca compraram e compradores de aromatizador sem água de passar — objetivo: gerar confiança e converter.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">O que dizem quem já experimentou... ⭐ | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Depoimentos reais de quem transformou sua casa e seu espaço.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">A melhor propaganda é quem já viveu a experiência. ⭐
+
+⭐⭐⭐⭐⭐ "O Aromatizador fixou por mais de 4 horas no sofá. Toda visita pergunta qual é o perfume da minha casa!" — Fernanda S.
+
+⭐⭐⭐⭐⭐ "Comprei o kit e a Água de Passar deixou minhas roupas com um aroma incrível o dia todo." — Mariana R.
+
+⭐⭐⭐⭐⭐ "Instalei a máquina na loja e os clientes sempre comentam o cheirinho agradável. Valeu cada centavo!" — Diego L., proprietário de boutique.
+
+Em maio, você ainda pode garantir os produtos com nossas condições especiais:
+
+🌿 Aromatizador + Água de Passar grátis: perfumaedecora.com.br/aromatizador500ml
+🏢 Máquina 150m² por R$899 + Fragrância grátis: 1250764.commercesuite.com.br/maquinadearoma150metros
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Ver Aromatizador 500ml</a>
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn secondary">Ver Máquina 150m²</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Prints de avaliações 5 estrelas com fotos de produtos. Formato colagem/mosaico.<br><br>
+              <strong>Texto âncora:</strong> "Mais de X clientes satisfeitos" (usar número real se disponível). Fundo neutro, tipografia destacada.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 07 -->
+      <div class="card" id="email-07">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 07 — Faltam 3 dias! Último aviso</h3>
+            <div class="card-meta">
+              <span>📅 28/05 (Quarta) · 9h30</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Camp. 1</span>
+              <span class="camp-tag c2">Camp. 2</span>
+              <span class="camp-tag c3">Camp. 3</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Toda a base: clientes VIPs, inativos, leads e amantes de bem-estar — urgência máxima para todos que ainda não aproveitaram as promoções.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">⏳ Faltam 3 dias para encerrar | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Depois de 31/05, as promoções encerram. É a sua última chance!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">{Nome}, o relógio está correndo! ⏰
+
+Em 3 dias, todas as nossas promoções de maio encerram definitivamente.
+
+🌿 Aromatizador 500ml + Água de Passar GRÁTIS
+→ perfumaedecora.com.br/aromatizador500ml
+
+🏢 Máquina 150m² por R$899 + Fragrâncias GRÁTIS
+→ 1250764.commercesuite.com.br/maquinadearoma150metros
+
+🕯️ Linha Elegance (Velas) com 25% OFF
+→ perfumaedecora.com.br/velasaromaticas
+
+🌱 Linha Aromaterapia com 25% OFF
+→ perfumaedecora.com.br/aromaeterapia
+
+Não deixe para amanhã o que você pode garantir hoje. 🙏
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Aromatizador + Brinde</a>
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn secondary">Máquina 150m²</a>
+              <a href="https://www.perfumaedecora.com.br/velasaromaticas" target="_blank" class="cta-btn secondary">Elegance 25% OFF</a>
+              <a href="https://www.perfumaedecora.com.br/aromaeterapia" target="_blank" class="cta-btn secondary">Aromaterapia 25% OFF</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Countdown visual "3 dias" em destaque central. Todos os 4 produtos lado a lado.<br><br>
+              <strong>Tom:</strong> Urgência visual clara — cor de fundo mais escura ou moldura vermelha suave. CTA: "Garantir agora antes que encerre".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 08 -->
+      <div class="card" id="email-08">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 08 — Lançamento Elegance + Aromaterapia</h3>
+            <div class="card-meta">
+              <span>📅 03/05 (Sábado) · 10h</span>
+              <span class="dot"></span>
+              <span class="camp-tag c3">Campanha 3</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Leads que nunca compraram, compradores de aromatizador e amantes de bem-estar/autocuidado — pessoas com perfil residencial e sensível a experiências sensoriais.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">🕯️ 25% OFF nas nossas linhas mais amadas de maio | Perfuma & Decora</div>
+            <div class="preheader">Pré-header: Elegance e Aromaterapia em promoção — só durante todo o mês de maio!</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Olá, {Nome}! 🌸
+
+Em maio, duas das nossas linhas favoritas estão com 25% DE DESCONTO — e você vai querer aproveitar cada uma delas.
+
+🕯️ LINHA ELEGANCE — Velas Aromáticas
+Velas com identidade visual sofisticada e fragrâncias exclusivas. Perfeitas para perfumar e decorar banheiros, salas, quartos, clínicas e escritórios. Cada vela é uma experiência sensorial completa.
+Ver a linha: perfumaedecora.com.br/velasaromaticas
+
+🌱 LINHA AROMATERAPIA
+Aromatizadores e velas naturais formulados com óleos essenciais puros — sem sintéticos, sem parafina. Para quem busca bem-estar real através dos aromas. Reduz estresse, acalma a mente, melhora o sono.
+Ver a linha: perfumaedecora.com.br/aromaeterapia
+
+25% OFF durante TODO o mês de maio. Aproveite!
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/velasaromaticas" target="_blank" class="cta-btn">Ver Linha Elegance (Velas)</a>
+              <a href="https://www.perfumaedecora.com.br/aromaeterapia" target="_blank" class="cta-btn secondary">Ver Linha Aromaterapia</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Velas acesas em ambiente aconchegante — luz quente, fundo escuro. Duas seções: Elegance (esquerda) e Aromaterapia (direita).<br><br>
+              <strong>Destaque:</strong> "25% OFF" em tipografia grande e elegante. Clima sensorial, íntimo, premium.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL 09 -->
+      <div class="card" id="email-09">
+        <div class="card-header">
+          <div class="card-header-left">
+            <h3>E-mail 09 — Pós-Dia das Mães: Foco Bem-estar</h3>
+            <div class="card-meta">
+              <span>📅 13/05 (Terça) · 10h</span>
+              <span class="dot"></span>
+              <span class="camp-tag c1">Campanha 1</span>
+              <span class="camp-tag c3">Campanha 3</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value">Inativos, leads que nunca compraram e amantes de bem-estar/autocuidado — foco em autocuidado após o Dia das Mães, com desconto ainda ativo.</div>
+          </div>
+          <div class="subject-box">
+            <div class="label-sm">Assunto</div>
+            <div class="assunto">Cuide de você em maio — seu lar merece isso 🌿</div>
+            <div class="preheader">Pré-header: O Dia das Mães passou, mas o cuidado com seu espaço não precisa parar.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy do E-mail</div>
+            <div class="copy-body">Olá, {Nome}! 🌸
+
+O Dia das Mães passou — mas maio ainda tem muito a oferecer para quem quer cuidar do próprio espaço e do próprio bem-estar.
+
+Nossas linhas Elegance e Aromaterapia ainda estão com 25% de desconto por todo o mês de maio!
+
+🌱 Linha Aromaterapia: Velas naturais com óleos essenciais. Para relaxar, dormir melhor, equilibrar as emoções. Autocuidado de verdade.
+perfumaedecora.com.br/aromaeterapia
+
+🕯️ Linha Elegance: Velas aromáticas com fragrâncias exclusivas e design sofisticado. O toque perfeito de estilo e aroma para seu lar.
+perfumaedecora.com.br/velasaromaticas
+
+Aproveite o desconto enquanto o mês não acaba!
+
+Com carinho,
+Equipe Perfuma & Decora</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/aromaeterapia" target="_blank" class="cta-btn">Aromaterapia 25% OFF</a>
+              <a href="https://www.perfumaedecora.com.br/velasaromaticas" target="_blank" class="cta-btn secondary">Elegance (Velas) 25% OFF</a>
+            </div>
+          </div>
+          <div class="banner-box">
+            <div class="banner-title">🎨 Sugestão de Banner para Designer</div>
+            <div class="banner-suggestion">
+              <strong>Visual:</strong> Mulher relaxando em casa com vela acesa ao fundo. Clima introspectivo e aconchegante.<br><br>
+              <strong>Texto:</strong> "Para você, não só para presentear" · "25% OFF todo o mês de maio".
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid -->
+  </section>
+
+  <!-- ══════════════════════════════════════ WHATSAPP ══════════════════════════════════════ -->
+  <section id="whatsapp">
+    <div class="section-header">
+      <div class="section-tag">03 — WhatsApp (RD Conversas)</div>
+      <h2>Copys de WhatsApp</h2>
+    </div>
+
+    <p style="font-size:13px; color:var(--mid); margin-bottom:28px; line-height:1.7; background:var(--tag-bg); padding:16px 20px; border-radius:2px; border-left:3px solid var(--gold);">
+      ⚠️ <strong style="color:var(--dark)">Atenção:</strong> Cada mensagem de WhatsApp tem custo por disparo. Os templates precisam ser aprovados pela Meta com pelo menos 3 dias de antecedência. Use apenas para os públicos de maior potencial de compra.
+    </p>
+
+    <div class="cards-grid">
+
+      <!-- WA 01 -->
+      <div class="wa-card" id="wa-01">
+        <div class="wa-card-header">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 01 — VIPs: Acesso Exclusivo às Ofertas</h3>
+            <div class="wa-date">📅 05/05 (Segunda) · 9h · Template: perfuma_maio_abertura_vip</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes VIPs — compradores ativos dos últimos 90 dias. Recebem as novidades em primeira mão como reconhecimento de fidelidade.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">Olá, {Nome}! 🌸
+
+Aqui é a Perfuma & Decora — e você, por ser nosso/a cliente especial, está recebendo essa novidade em primeira mão!
+
+🌿 Em maio: COMPRE 1 Aromatizador 500ml e GANHE 1 Água de Passar Perfumada da sua escolha — de brinde, sem custo adicional!
+
+✨ Alta fixação · Fragrâncias exclusivas · Só em maio
+
+Aproveite agora: https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml
+
+Qualquer dúvida, é só chamar! 😊</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Aromatizador 500ml</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WA 02 -->
+      <div class="wa-card" id="wa-02">
+        <div class="wa-card-header">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 02 — Máquina 150m² para Perfil Comercial</h3>
+            <div class="wa-date">📅 08/05 (Quinta) · 9h · Template: perfuma_maio_maquina_comercial</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes com perfil comercial: donos de lojas, clínicas, salões e espaços profissionais. Histórico de compra de máquinas ou fragrâncias para marketing olfativo.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">{Nome}, tudo bem? 😊
+
+Temos uma condição especial em maio para espaços profissionais como o seu!
+
+🏢 MÁQUINA DE AROMA 150m²
+✅ De R$958,80 por R$899,00
+✅ + 1 Fragrância 200ml GRÁTIS da sua escolha
+✅ Controle digital · Alta performance · Ideal para lojas e clínicas
+
+Veja os detalhes: https://1250764.commercesuite.com.br/maquinadearoma150metros
+
+Promoção válida até 31/05. Falamos mais?</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn">Ver Máquina 150m²</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WA 03 -->
+      <div class="wa-card" id="wa-03">
+        <div class="wa-card-header">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 03 — Urgência Dia das Mães</h3>
+            <div class="wa-date">📅 09/05 (Sexta) · 9h · Template: perfuma_maio_urgencia_diamaes</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes inativos que compraram entre 3 e 12 meses atrás (com histórico de ao menos 2 compras) e compradores de aromatizador que ainda não têm água de passar.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">{Nome}, o Dia das Mães é domingo! 🌸
+
+Ainda dá tempo de presentear com algo especial e cheiroso. 💐
+
+🌿 Aromatizador 500ml + Água de Passar Perfumada de BRINDE — pelo preço de 1!
+
+⏰ Pedidos até hoje chegam a tempo!
+
+Garanta o seu: https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Garantir o Presente</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WA 09 -->
+      <div class="wa-card" id="wa-09">
+        <div class="wa-card-header">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 09 — ÚLTIMO DIA: Encerramento de todas as campanhas</h3>
+            <div class="wa-date">📅 30/05 (Sexta) · 9h · Template: perfuma_maio_ultimo_dia</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes VIPs e inativos que <strong>não realizaram nenhuma compra em maio</strong> — última tentativa de conversão antes do encerramento das promoções.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">{Nome}, HOJE é o ÚLTIMO DIA! 🚨🕯️
+
+Todas as promoções de maio encerram hoje, 30/05.
+
+🌿 Aromatizador + Água de Passar GRÁTIS
+→ https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml
+
+🏢 Máquina 150m² R$899 + Fragrâncias GRÁTIS
+→ https://1250764.commercesuite.com.br/maquinadearoma150metros
+
+🕯️ Elegance + Aromaterapia 25% OFF
+→ https://www.perfumaedecora.com.br/velasaromaticas
+
+Não perde! 😊</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Aromatizador</a>
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn secondary">Máquina</a>
+              <a href="https://www.perfumaedecora.com.br/velasaromaticas" target="_blank" class="cta-btn secondary">Elegance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUGESTÕES ADICIONAIS -->
+      <div style="padding: 36px 0 8px;">
+        <div class="section-tag">Sugestões Adicionais de WhatsApp</div>
+        <p style="font-size:13px; color:var(--mid); margin-top:8px; line-height:1.6;">As mensagens abaixo são opcionais — use conforme disponibilidade do pacote de disparos e se o público ainda não converteu.</p>
+      </div>
+
+      <!-- WA 04 -->
+      <div class="wa-card" id="wa-04">
+        <div class="wa-card-header" style="background: linear-gradient(90deg, #b07a20 0%, #c8922a 100%);">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 04 — Urgência Final: Máquina 150m²</h3>
+            <div class="wa-date">📅 23/05 (Sexta) · 9h · Template: perfuma_maio_urgencia_maquina</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div class="adicional-badge">✦ Sugestão Adicional</div>
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes com perfil comercial que <strong>não compraram a máquina em maio</strong> — última semana, urgência para fechar a venda premium.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">{Nome}, semana final da nossa promoção! ⏰
+
+🏢 Ainda dá tempo de garantir a Máquina de Aroma 150m² por R$899,00 + 1 Fragrância 200ml GRÁTIS.
+
+Depois de 31/05, o preço volta ao normal.
+
+https://1250764.commercesuite.com.br/maquinadearoma150metros
+
+Ficou com dúvida? É só responder aqui! 😊</div>
+          </div>
+          <div>
+            <div class="field-label">Link da CTA</div>
+            <div class="cta-row">
+              <a href="https://1250764.commercesuite.com.br/maquinadearoma150metros" target="_blank" class="cta-btn">Ver Máquina 150m²</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WA 06 -->
+      <div class="wa-card" id="wa-06">
+        <div class="wa-card-header" style="background: linear-gradient(90deg, #b07a20 0%, #c8922a 100%);">
+          <div class="wa-icon">💬</div>
+          <div>
+            <h3>WA 06 — Reativação de Inativos com as 3 Ofertas</h3>
+            <div class="wa-date">📅 07/05 (Quarta) · 10h · Template: perfuma_maio_reativacao_inativo</div>
+          </div>
+        </div>
+        <div class="wa-card-body">
+          <div class="adicional-badge">✦ Sugestão Adicional</div>
+          <div>
+            <div class="field-label">Público-Alvo</div>
+            <div class="field-value" style="font-size:13.5px;">Clientes inativos que compraram entre 3 e 12 meses atrás e que já realizaram ao menos 2 compras — alto potencial de reativação.</div>
+          </div>
+          <div>
+            <div class="field-label">Copy da Mensagem</div>
+            <div class="wa-bubble">Oi, {Nome}! Sentimos sua falta! 🌸
+
+Maio chegou com motivos de sobra para você voltar a nos visitar.
+
+🌿 Compre 1 Aromatizador 500ml e GANHE 1 Água de Passar de brinde
+→ https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml
+
+🕯️ Linha Elegance e Aromaterapia com 25% OFF — só este mês!
+→ https://www.perfumaedecora.com.br/velasaromaticas
+
+Oferta válida até 31/05. Aproveite! 🎁</div>
+          </div>
+          <div>
+            <div class="field-label">Links das CTAs</div>
+            <div class="cta-row">
+              <a href="https://www.perfumaedecora.com.br/loja/busca.php?loja=1250764&palavra_busca=Aromatizador+Marketing+Olfativo+500ml" target="_blank" class="cta-btn">Aromatizador + Brinde</a>
+              <a href="https://www.perfumaedecora.com.br/velasaromaticas" target="_blank" class="cta-btn secondary">Linha Elegance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid WA -->
+  </section>
+
+</div><!-- /container -->
+
+<footer class="footer">
+  <p>Planejamento desenvolvido exclusivamente para a <strong>Perfuma & Decora</strong> · Maio 2025</p>
+  <p style="margin-top:6px;">perfumaedecora.com.br</p>
+</footer>
+
+</body>
+</html>
